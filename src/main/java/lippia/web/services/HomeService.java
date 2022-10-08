@@ -20,4 +20,12 @@ public class HomeService extends ActionManager {
         click(PracticeConstants.HOME_MENU_BUTTON_XPATH);
     }
 
+    public static void clickArrivalImage(int order) {
+        click(PracticeConstants.ARRIVAL_CONTAINER_XPATH + "/div[" + order + "]");
+    }
+
+    public static void clickAddToBasket() {
+        click(PracticeConstants.ADDTOBASKET_BUTTON_XPATH);
+    }
+
 }
