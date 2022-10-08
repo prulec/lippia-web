@@ -12,7 +12,7 @@ public class HomeSteps extends PageSteps {
         HomeService.navigateToPracticeHome();
     }
 
-    @When("Click on Shop Menu")
+    @When("Click on Shop Menu button")
     public void goToShopPage() {
         HomeService.clickShopButton();
     }
