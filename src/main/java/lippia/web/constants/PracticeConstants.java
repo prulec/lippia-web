@@ -20,8 +20,9 @@ public class PracticeConstants {
     public static final String ERROR_MESSAGE_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div[1]/ul/li";
 
     // Shop
-    public static final String CATEGORY_FILTERS_XPATH = "xpath:/html/body/div[1]/div[2]/div/aside/div[3]/ul/li";
-    public static final String PRODUCTITEMS_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/ul/li";
+    public static final String CATEGORY_FILTERS_XPATH = "xpath://*[@id=\"woocommerce_product_categories-2\"]/ul/li";
+    public static final String PRODUCTITEMS_XPATH = "xpath://*[@id=\"content\"]/ul/li";
+    public static final String FOOTER_XPATH = "//*[@id=\"footer\"]";
     public static final String OUTOFSTOCK_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/p";
     public static final String PRICE_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/div[1]/p";
 
