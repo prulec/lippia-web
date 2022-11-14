@@ -2,6 +2,7 @@ package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.*;
+import lippia.web.services.HomeService;
 import lippia.web.services.RegistrationResultsService;
 import lippia.web.services.RegistrationService;
 
@@ -10,6 +11,7 @@ public class RegistrationSteps extends PageSteps {
     @When("Click on the My Account Menu button")
     public void goToMyAccount() {
         RegistrationService.clickMyAccount();
+        HomeService.closeAds();
     }
     @And("Enter password (.*) in the Register form")
     public void enterPassword(String password) {

@@ -15,15 +15,17 @@ public class PracticeConstants {
     public static final String MYACCOUNTMENU_BUTTON_XPATH = "xpath:/html/body/div[1]/div[1]/header/div[2]/nav/ul/li[2]/a";
     public static final String REGISTERPASS_INPUT_XPATH = "xpath://*[@id=\"reg_password\"]";
     public static final String REGISTEREMAIL_INPUT_XPATH = "xpath://*[@id=\"reg_email\"]";
-    public static final String REGISTER_BUTTON_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/form/p[3]/input[3]";
+    public static final String REGISTER_BUTTON_XPATH = "xpath://*[@id='customer_login']/div[2]/form/p[3]/input[@type='submit']";
     public static final String SIGNOUT_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div[1]/div/p[1]/a";
     public static final String ERROR_MESSAGE_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div[1]/ul/li";
 
     // Shop
     public static final String CATEGORY_FILTERS_XPATH = "xpath://*[@id=\"woocommerce_product_categories-2\"]/ul/li";
-    public static final String PRODUCTITEMS_XPATH = "xpath://*[@id=\"content\"]/ul/li";
-    public static final String FOOTER_XPATH = "//*[@id=\"footer\"]";
+    public static final String PRODUCTITEMS_XPATH = "xpath://*[@id='content']/ul/li";
     public static final String OUTOFSTOCK_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/p";
     public static final String PRICE_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/div[1]/p";
+    public static final String AD_IFRAME1_XPATH = "xpath:/html/ins/*/*[contains(@id, 'aswift_') and not(contains(@id, 'host'))]";
+    public static final String AD_IFRAME2_XPATH = "xpath://*[@id='ad_iframe']";
+    public static final String AD_CLOSE_BUTTON_XPATH = "xpath://*[@id='dismiss-button']";
 
 }

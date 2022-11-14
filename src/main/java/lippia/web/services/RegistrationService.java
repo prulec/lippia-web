@@ -12,6 +12,12 @@ public class RegistrationService extends ActionManager {
         click(PracticeConstants.REGISTER_BUTTON_XPATH);
     }
     public static void enterPassword(String password) {
+        click(PracticeConstants.REGISTERPASS_INPUT_XPATH);
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         setInput(PracticeConstants.REGISTERPASS_INPUT_XPATH, password);
     }
     public static void enterEmail(String email) {

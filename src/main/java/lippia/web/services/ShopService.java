@@ -1,12 +1,9 @@
 package lippia.web.services;
 
 import com.crowdar.core.actions.ActionManager;
-import com.crowdar.driver.DriverManager;
+import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.PracticeConstants;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,11 +41,9 @@ public class ShopService extends ActionManager {
         return indexes;
     }
     public static void clickProductImageWithSale(int number) {
-        // Explicit Wait instantiation
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriverInstance(), 10);
-        // Wait until the Footer is loaded in Shop page
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PracticeConstants.FOOTER_XPATH)));
-        click(PracticeConstants.PRODUCTITEMS_XPATH + "[" + getSaleIndexes().get(number-1) + "]/a[1]");
+        WebActionManager.waitVisibilities(PracticeConstants.PRODUCTITEMS_XPATH);
+        int index = getSaleIndexes().get(number-1);
+        click(PracticeConstants.PRODUCTITEMS_XPATH + "[" + index + "]/a[2]");
     }
 
 }

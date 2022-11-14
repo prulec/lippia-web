@@ -15,11 +15,13 @@ public class HomeSteps extends PageSteps {
     @When("Click on Shop Menu button")
     public void goToShopPage() {
         HomeService.clickShopButton();
+        HomeService.closeAds();
     }
 
     @And("Click on Home menu button")
     public void goHome() {
         HomeService.clickHomeButton();
+        HomeService.closeAds();
     }
 
     // Test: Home 1
