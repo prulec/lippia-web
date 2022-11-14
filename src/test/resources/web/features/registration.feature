@@ -1,10 +1,10 @@
-@TP6
+@TP6 @Registration
 Feature: Registration tests
 
   Background:
     Given The client is in practice page
 
-  @Registration @Success @Smoke
+  @AccountRegistration @Success @Smoke
   Scenario Outline: The client can register an account with valid email and password (1)
     When Click on the My Account Menu button
     And Enter valid unregistered email in the Register form
@@ -17,7 +17,7 @@ Feature: Registration tests
       | !Example123 |
       | !Example456 |
 
-  @Registration @Failed @Smoke @Now
+  @AccountRegistration @Failed @Smoke @Now
   Scenario Outline: The client can't register an account with empty email (3 and 5)
     When Click on the My Account Menu button
     And Enter empty email in the Register form

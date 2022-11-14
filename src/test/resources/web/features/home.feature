@@ -1,4 +1,4 @@
-@TP6
+@TP6 @Home
 Feature: Home tests
 
   Background:

@@ -26,6 +26,7 @@ public class HomeSteps extends PageSteps {
 
     // Test: Home 1
     @Then("The client verify that there are three Sliders on page")
+    @And("The client verify that there are three Sliders on page")
     public void verifySliders() {
         HomeResultsService.verifySliders();
     }
@@ -38,6 +39,7 @@ public class HomeSteps extends PageSteps {
 
     // Test: Home 3
     @Then("The client verify that is in the product details page where exists an Add To Basket button")
+    @And("Verify that is now in the product details page where an Add To Basket button exists")
     public void verifyArrivals() {
         HomeResultsService.verifyArrival();
     }
@@ -49,6 +51,7 @@ public class HomeSteps extends PageSteps {
     }
 
     @Then("The client verify that the Book is in the Menu item with price")
+    @And("Verify that the Book is in the Menu item with price")
     public void verifyAddingToBasket() {
         HomeResultsService.verifyAddToBasketMenuItem();
     }

@@ -1,4 +1,4 @@
-@TP6
+@TP6 @Shop
 Feature: Shop tests
 
   Background:
