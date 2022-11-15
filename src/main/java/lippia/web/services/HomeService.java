@@ -30,6 +30,7 @@ public class HomeService extends ActionManager {
     public static void clickAddToBasket() {
         click(PracticeConstants.ADDTOBASKET_BUTTON_XPATH);
     }
+
     public static void closeAds() {
         WebDriver driver = DriverManager.getDriverInstance();
         try {
@@ -48,7 +49,36 @@ public class HomeService extends ActionManager {
         } catch (Exception e) {
             System.out.println("NO ADS!");
         }
-
     }
 
+    public static void clickMenuItemLinkToCheckoutPage() {
+        click(PracticeConstants.BASKETMENUITEM_ANCHOR_XPATH);
+    }
+
+    public static void clickProceedToCheckout() {
+        click(PracticeConstants.PROCEEDTOCHECKOUT_BUTTON_XPATH);
+    }
+
+    public static void fillBillingDetailsForm() {
+        setInput(PracticeConstants.BILLINGFORM_FIRSTNAME_XPATH, "Roberto");
+        setInput(PracticeConstants.BILLINGFORM_LASTNAME_XPATH, "Gómez Bolaños");
+        setInput(PracticeConstants.BILLINGFORM_EMAIL_XPATH, "chespirito@domain.com.mx");
+        setInput(PracticeConstants.BILLINGFORM_PHONE_XPATH, "+52 55 57093744");
+        setInput(PracticeConstants.BILLINGFORM_COUNTRY_XPATH, "Mexico");
+        setInput(PracticeConstants.BILLINGFORM_ADDRESS_XPATH, "Lorenzo Boturini 435");
+        setInput(PracticeConstants.BILLINGFORM_CITY_XPATH, "Cuauhtémoc");
+        setInput(PracticeConstants.BILLINGFORM_STATE_XPATH, "Distrito Federal");
+        setInput(PracticeConstants.BILLINGFORM_POSTCODE_XPATH, "10020");
+    }
+
+    public static void selectPaymentGateway() {
+        String[] paymentGatewayLocators = {
+                PracticeConstants.PAYMENTGATEWAY_DIRECT_XPATH,
+                PracticeConstants.PAYMENTGATEWAY_CHECK_XPATH,
+                PracticeConstants.PAYMENTGATEWAY_CASH_XPATH,
+                PracticeConstants.PAYMENTGATEWAY_PAYPAL_XPATH
+        };
+        int i = (int) (Math.random() * 4);
+        click(paymentGatewayLocators[i]);
+    }
 }

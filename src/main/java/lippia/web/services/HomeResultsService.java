@@ -47,4 +47,18 @@ public class HomeResultsService extends ActionManager {
         Assert.assertTrue(getBasketMenuItemAnchor().getAttribute("href").matches("https://practice.automationtesting.in/basket."));
     }
 
+    public static void verifyThreeArrivalsOnHomePage() {
+        List<WebElement> arrivals = getElements(PracticeConstants.ARRIBAL_DIV_XPATH);
+        Assert.assertEquals(arrivals.size(), 3);
+    }
+
+    public static void verifyTotalAndSubtotalOnCheckoutPage() {
+        WebElement total = getElement(PracticeConstants.TOTAL_BASKET_XPATH);
+        double totalValue = Double.parseDouble(total.getText());
+        WebElement subtotal = getElement(PracticeConstants.SUBTOTAL_BASKET_XPATH);
+        double subtotalValue = Double.parseDouble(subtotal.getText());
+        Assert.assertTrue(totalValue > 0);
+        Assert.assertTrue(subtotalValue > 0);
+        Assert.assertTrue(totalValue > subtotalValue);
+    }
 }

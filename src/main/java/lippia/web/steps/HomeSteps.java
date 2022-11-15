@@ -61,4 +61,29 @@ public class HomeSteps extends PageSteps {
         HomeResultsService.verifyBasketMenuLink();
     }
 
+    @And("Verify that there are three Arrivals on page")
+    public void verifyThatThereAreThreeArrivalsOnPage() {
+        HomeResultsService.verifyThreeArrivalsOnHomePage();
+    }
+
+    @And("Click on the Menu item link which navigates to proceed to check out page")
+    public void clickOnTheMenuItemLinkWhichNavigatesToProceedToCheckOutPage() {
+        HomeService.clickMenuItemLinkToCheckoutPage();
+    }
+
+    @And("Verify that is shown the total and subtotal values, total is greater than subtotal due to taxes")
+    public void verifyThatIsShownTheTotalAndSubtotalValuesTotalIsGreaterThanSubtotalDueToTaxes() {
+        HomeResultsService.verifyTotalAndSubtotalOnCheckoutPage();
+    }
+
+    @And("Click on Proceed to Checkout button which navigates to payment gateway page")
+    public void clickOnProceedToCheckoutButtonWhichNavigatesToPaymentGatewayPage() {
+        HomeService.clickProceedToCheckout();
+    }
+
+    @And("Fill the billing details and opt for any available payment gateway in the payment gateway page")
+    public void fillTheBillingDetailsAndOptForAnyAvailablePaymentGatewayInThePaymentGatewayPage() {
+        HomeService.fillBillingDetailsForm();
+        HomeService.selectPaymentGateway();
+    }
 }
