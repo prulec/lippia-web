@@ -39,7 +39,7 @@ public class HomeService extends ActionManager {
                 driver.switchTo().frame(iframe1);
                 try {
                     getElement(PracticeConstants.AD_CLOSE_BUTTON_XPATH).click();
-                } catch(Exception e) {
+                } catch (Exception e) {
                     WebElement iframe2 = getElement(PracticeConstants.AD_IFRAME2_XPATH);
                     driver.switchTo().frame(iframe2);
                     click(PracticeConstants.AD_CLOSE_BUTTON_XPATH);
@@ -60,25 +60,24 @@ public class HomeService extends ActionManager {
     }
 
     public static void fillBillingDetailsForm() {
-        setInput(PracticeConstants.BILLINGFORM_FIRSTNAME_XPATH, "Roberto");
-        setInput(PracticeConstants.BILLINGFORM_LASTNAME_XPATH, "Gómez Bolaños");
-        setInput(PracticeConstants.BILLINGFORM_EMAIL_XPATH, "chespirito@domain.com.mx");
-        setInput(PracticeConstants.BILLINGFORM_PHONE_XPATH, "+52 55 57093744");
-        setInput(PracticeConstants.BILLINGFORM_COUNTRY_XPATH, "Mexico");
-        setInput(PracticeConstants.BILLINGFORM_ADDRESS_XPATH, "Lorenzo Boturini 435");
-        setInput(PracticeConstants.BILLINGFORM_CITY_XPATH, "Cuauhtémoc");
-        setInput(PracticeConstants.BILLINGFORM_STATE_XPATH, "Distrito Federal");
-        setInput(PracticeConstants.BILLINGFORM_POSTCODE_XPATH, "10020");
+        setInput(PracticeConstants.BILLINGFORM_FIRSTNAME_XPATH, PracticeConstants.BILLINGFORM_DATA.get("firstName"));
+        setInput(PracticeConstants.BILLINGFORM_LASTNAME_XPATH, PracticeConstants.BILLINGFORM_DATA.get("lastName"));
+        setInput(PracticeConstants.BILLINGFORM_EMAIL_XPATH, PracticeConstants.BILLINGFORM_DATA.get("email"));
+        setInput(PracticeConstants.BILLINGFORM_PHONE_XPATH, PracticeConstants.BILLINGFORM_DATA.get("phone"));
+        setInput(PracticeConstants.BILLINGFORM_COUNTRY_XPATH, PracticeConstants.BILLINGFORM_DATA.get("country"));
+        setInput(PracticeConstants.BILLINGFORM_ADDRESS_XPATH, PracticeConstants.BILLINGFORM_DATA.get("address"));
+        setInput(PracticeConstants.BILLINGFORM_CITY_XPATH, PracticeConstants.BILLINGFORM_DATA.get("city"));
+        setInput(PracticeConstants.BILLINGFORM_STATE_XPATH, PracticeConstants.BILLINGFORM_DATA.get("state"));
+        setInput(PracticeConstants.BILLINGFORM_POSTCODE_XPATH, PracticeConstants.BILLINGFORM_DATA.get("postcode"));
     }
 
     public static void selectPaymentGateway() {
-        String[] paymentGatewayLocators = {
-                PracticeConstants.PAYMENTGATEWAY_DIRECT_XPATH,
-                PracticeConstants.PAYMENTGATEWAY_CHECK_XPATH,
-                PracticeConstants.PAYMENTGATEWAY_CASH_XPATH,
-                PracticeConstants.PAYMENTGATEWAY_PAYPAL_XPATH
-        };
         int i = (int) (Math.random() * 4);
-        click(paymentGatewayLocators[i]);
+        PracticeConstants.PAYMENTGATEWAY_INDEX[0] = i;
+        click(PracticeConstants.PAYMENTGATEWAY_LOCATORS[i]);
+    }
+
+    public static void clickOnPlaceOrderButton() {
+        click(PracticeConstants.PLACEORDER_BUTTON_XPATH);
     }
 }

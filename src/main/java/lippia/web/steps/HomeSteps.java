@@ -86,4 +86,24 @@ public class HomeSteps extends PageSteps {
         HomeService.fillBillingDetailsForm();
         HomeService.selectPaymentGateway();
     }
+
+    @And("Verify that is possible to add a coupon in the payment gateway page")
+    public void verifyThatIsPossibleToAddACouponInThePaymentGatewayPage() {
+        HomeResultsService.verifyCoupon();
+    }
+
+    @Then("The client can see the Billing, Order, Payment gateways and Additional details in the payment gateway page")
+    public void theClientCanSeeTheBillingOrderPaymentGatewaysAndAdditionalDetailsInThePaymentGatewayPage() {
+        HomeResultsService.verifyDetailsInPaymentGatewayPage();
+    }
+
+    @And("Click on the Place Order button")
+    public void clickOnThePlaceOrderButton() {
+        HomeService.clickOnPlaceOrderButton();
+    }
+
+    @Then("The client can see the Order confirmation page with Order, Bank and Billing details")
+    public void theClientCanSeeTheOrderConfirmationPageWithOrderBankAndBillingDetails() {
+        HomeResultsService.verifyOrderConfirmationPage();
+    }
 }

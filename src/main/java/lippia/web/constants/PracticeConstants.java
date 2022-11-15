@@ -1,5 +1,8 @@
 package lippia.web.constants;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PracticeConstants {
 
     // Home
@@ -16,17 +19,52 @@ public class PracticeConstants {
     public static final String PROCEEDTOCHECKOUT_BUTTON_XPATH = "xpath://a[contains(text(), 'Proceed to Checkout')]";
     public static final String BILLINGFORM_FIRSTNAME_XPATH = "xpath://*[@id=\"billing_first_name\"]";
     public static final String BILLINGFORM_LASTNAME_XPATH = "xpath://*[@id=\"billing_last_name\"]";
+    public static final String BILLINGFORM_COMPANY_XPATH = "xpath://*[@id=\"billing_company\"]";
     public static final String BILLINGFORM_EMAIL_XPATH = "xpath://*[@id=\"billing_email\"]";
     public static final String BILLINGFORM_PHONE_XPATH = "xpath://*[@id=\"billing_phone\"]";
     public static final String BILLINGFORM_COUNTRY_XPATH = "xpath://*[@id=\"billing_country\"]/option[text()='Argentina']";
     public static final String BILLINGFORM_ADDRESS_XPATH = "xpath://*[@id=\"billing_address_1\"]";
+    public static final String BILLINGFORM_ADDRESSDETAIL_XPATH = "xpath://*[@id=\"billing_address_2\"]";
     public static final String BILLINGFORM_CITY_XPATH = "xpath://*[@id=\"billing_city\"]";
     public static final String BILLINGFORM_STATE_XPATH = "xpath://*[@id=\"billing_state\"]/option[text()='Río Negro']";
     public static final String BILLINGFORM_POSTCODE_XPATH = "xpath://*[@id=\"billing_postcode\"]";
+    public static final Map<String,String> BILLINGFORM_DATA = getBillingFormData();
+    private static Map<String,String> getBillingFormData() {
+        Map<String,String> data = new HashMap<>();
+        data.put("firstName", "Roberto");
+        data.put("lastName", "Gómez Bolaños");
+        data.put("email", "chespirito@domain.com.mx");
+        data.put("phone", "+52 55 57093744");
+        data.put("country", "Mexico");
+        data.put("address", "Lorenzo Boturini 435");
+        data.put("city", "Cuauhtémoc");
+        data.put("state", "Distrito Federal");
+        data.put("postcode", "10020");
+        return data;
+    }
+    public static final String ADDITIONALDETAILS_XPATH = "xpath://*[@id=\"order_comments\"]";
+    public static final String TOTAL_PAYMENTPAGE_XPATH = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[3]/td/strong/span";
+    public static final String SUBTOTAL_PAYMENTPAGE_XPATH = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[1]/td/span";
     public static final String PAYMENTGATEWAY_DIRECT_XPATH = "xpath://*[@id=\"payment_method_bacs\"]";
     public static final String PAYMENTGATEWAY_CHECK_XPATH = "xpath://*[@id=\"payment_method_cheque\"]";
     public static final String PAYMENTGATEWAY_CASH_XPATH = "xpath://*[@id=\"payment_method_cod\"]";
     public static final String PAYMENTGATEWAY_PAYPAL_XPATH = "xpath://*[@id=\"payment_method_ppec_paypal\"]";
+    public static final String[] PAYMENTGATEWAY_LOCATORS = {
+            PAYMENTGATEWAY_DIRECT_XPATH,
+            PAYMENTGATEWAY_CHECK_XPATH,
+            PAYMENTGATEWAY_CASH_XPATH,
+            PAYMENTGATEWAY_PAYPAL_XPATH
+    };
+    public static final int[] PAYMENTGATEWAY_INDEX = {0};
+    public static final String COUPON_SHOW_XPATH = "xpath://a[@class='showcoupon']";
+    public static final String COUPON_INPUT_XPATH = "xpath://*[@id=\"coupon_code\"]";
+    public static final String COUPON_SUBMIT_XPATH = "xpath://input[@name='apply_coupon']";
+    public static final String COUPON_VALUE = "4567";
+    public static final String COUPON_MESSAGE_XPATH = "xpath://*[contains(text(),'Coupon')]";
+    public static final String PLACEORDER_BUTTON_XPATH = "xpath://*[@id=\"place_order\"]";
+    public static final String ORDER_NUMBER_XPATH = "xpath://*[contains(text(),'Order Number')]/strong";
+    public static final String ORDER_BANKDETAILS_HEADER_XPATH = "xpath://*[contains(text(),'Our Bank Details')]";
+    public static final String ORDER_BILLING_TOTAL_XPATH = "xpath://table[contains(@class,'shop_table')]/tfoot/tr[4]/td/span";
 
     // Registration
     public static final String MYACCOUNTMENU_BUTTON_XPATH = "xpath:/html/body/div[1]/div[1]/header/div[2]/nav/ul/li[2]/a";

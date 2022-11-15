@@ -39,7 +39,7 @@ Feature: Home tests
     And Click on Proceed to Checkout button which navigates to payment gateway page
     And Fill the billing details and opt for any available payment gateway in the payment gateway page
     And Click on the Place Order button
-    Then The client can see the Order confirmation page with Order, Bank, Customer and Billing details
+    Then The client can see the Order confirmation page with Order, Bank and Billing details
     Examples:
       | order |
       | 1     |
