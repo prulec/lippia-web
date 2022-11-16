@@ -4,6 +4,7 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.PracticeConstants;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import java.util.List;
@@ -64,8 +65,9 @@ public class HomeResultsService extends ActionManager {
 
     public static void verifyCoupon() {
         String couponValue = PracticeConstants.COUPON_VALUE;
+        WebElement showCouponForm = getElement(PracticeConstants.COUPON_SHOW_XPATH);
+        new Actions(DriverManager.getDriverInstance()).moveToElement(showCouponForm).perform();
         click(PracticeConstants.COUPON_SHOW_XPATH);
-        ActionManager.waitVisibility(PracticeConstants.COUPON_INPUT_XPATH);
         setInput(PracticeConstants.COUPON_INPUT_XPATH, couponValue);
         click(PracticeConstants.COUPON_SUBMIT_XPATH);
         ActionManager.waitVisibility(PracticeConstants.COUPON_MESSAGE_XPATH);
@@ -92,15 +94,15 @@ public class HomeResultsService extends ActionManager {
         WebElement city = getElement(PracticeConstants.BILLINGFORM_CITY_XPATH);
         WebElement state = getElement(PracticeConstants.BILLINGFORM_STATEFIELD_XPATH);
         WebElement postcode = getElement(PracticeConstants.BILLINGFORM_POSTCODE_XPATH);
-        Assert.assertEquals(firstName.getText(), PracticeConstants.BILLINGFORM_DATA.get("firstName"));
-        Assert.assertEquals(lastName.getText(), PracticeConstants.BILLINGFORM_DATA.get("lastName"));
-        Assert.assertEquals(email.getText(), PracticeConstants.BILLINGFORM_DATA.get("email"));
-        Assert.assertEquals(phone.getText(), PracticeConstants.BILLINGFORM_DATA.get("phone"));
+        Assert.assertEquals(firstName.getAttribute("value"), PracticeConstants.BILLINGFORM_DATA.get("firstName"));
+        Assert.assertEquals(lastName.getAttribute("value"), PracticeConstants.BILLINGFORM_DATA.get("lastName"));
+        Assert.assertEquals(email.getAttribute("value"), PracticeConstants.BILLINGFORM_DATA.get("email"));
+        Assert.assertEquals(phone.getAttribute("value"), PracticeConstants.BILLINGFORM_DATA.get("phone"));
         Assert.assertEquals(country.getText(), PracticeConstants.BILLINGFORM_DATA.get("country"));
-        Assert.assertEquals(address.getText(), PracticeConstants.BILLINGFORM_DATA.get("address"));
-        Assert.assertEquals(city.getText(), PracticeConstants.BILLINGFORM_DATA.get("city"));
+        Assert.assertEquals(address.getAttribute("value"), PracticeConstants.BILLINGFORM_DATA.get("address"));
+        Assert.assertEquals(city.getAttribute("value"), PracticeConstants.BILLINGFORM_DATA.get("city"));
         Assert.assertEquals(state.getText(), PracticeConstants.BILLINGFORM_DATA.get("state"));
-        Assert.assertEquals(postcode.getText(), PracticeConstants.BILLINGFORM_DATA.get("postcode"));
+        Assert.assertEquals(postcode.getAttribute("value"), PracticeConstants.BILLINGFORM_DATA.get("postcode"));
         Assert.assertTrue(company.isDisplayed());
         Assert.assertTrue(addressDetail.isDisplayed());
     }
@@ -112,9 +114,9 @@ public class HomeResultsService extends ActionManager {
 
     private static void validateOrderDetails() {
         WebElement total = getElement(PracticeConstants.TOTAL_PAYMENTPAGE_XPATH);
-        double totalValue = Double.parseDouble(total.getText());
+        double totalValue = Double.parseDouble(total.getText().substring(1));
         WebElement subtotal = getElement(PracticeConstants.SUBTOTAL_PAYMENTPAGE_XPATH);
-        double subtotalValue = Double.parseDouble(subtotal.getText());
+        double subtotalValue = Double.parseDouble(subtotal.getText().substring(1));
         Assert.assertTrue(totalValue > 0);
         Assert.assertTrue(subtotalValue > 0);
         Assert.assertTrue(totalValue > subtotalValue);
@@ -122,7 +124,7 @@ public class HomeResultsService extends ActionManager {
 
     private static void validatePaymentGateways() {
         WebElement radio = getElement(PracticeConstants.PAYMENTGATEWAY_LOCATORS[PracticeConstants.PAYMENTGATEWAY_INDEX[0]]);
-        Assert.assertTrue(radio.isSelected());
+        Assert.assertTrue(radio.getAttribute("selected").equals("true"));
     }
 
     public static void verifyOrderConfirmationPage() {
