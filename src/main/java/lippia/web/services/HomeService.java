@@ -64,10 +64,12 @@ public class HomeService extends ActionManager {
         setInput(PracticeConstants.BILLINGFORM_LASTNAME_XPATH, PracticeConstants.BILLINGFORM_DATA.get("lastName"));
         setInput(PracticeConstants.BILLINGFORM_EMAIL_XPATH, PracticeConstants.BILLINGFORM_DATA.get("email"));
         setInput(PracticeConstants.BILLINGFORM_PHONE_XPATH, PracticeConstants.BILLINGFORM_DATA.get("phone"));
-        setInput(PracticeConstants.BILLINGFORM_COUNTRY_XPATH, PracticeConstants.BILLINGFORM_DATA.get("country"));
+        click(PracticeConstants.BILLINGFORM_COUNTRYFIELD_XPATH);
+        click(PracticeConstants.BILLINGFORM_COUNTRYITEM_INCOMPLETE_XPATH + PracticeConstants.BILLINGFORM_DATA.get("country") + "']");
         setInput(PracticeConstants.BILLINGFORM_ADDRESS_XPATH, PracticeConstants.BILLINGFORM_DATA.get("address"));
         setInput(PracticeConstants.BILLINGFORM_CITY_XPATH, PracticeConstants.BILLINGFORM_DATA.get("city"));
-        setInput(PracticeConstants.BILLINGFORM_STATE_XPATH, PracticeConstants.BILLINGFORM_DATA.get("state"));
+        click(PracticeConstants.BILLINGFORM_STATEFIELD_XPATH);
+        click(PracticeConstants.BILLINGFORM_STATEITEM_INCOMPLETE_XPATH + PracticeConstants.BILLINGFORM_DATA.get("state") + "']");
         setInput(PracticeConstants.BILLINGFORM_POSTCODE_XPATH, PracticeConstants.BILLINGFORM_DATA.get("postcode"));
     }
 

@@ -17,7 +17,7 @@ Feature: Registration tests
       | !Example123 |
       | !Example456 |
 
-  @AccountRegistration @Failed @Smoke @Now
+  @AccountRegistration @Failed @Smoke
   Scenario Outline: The client can't register an account with empty email (3 and 5)
     When Click on the My Account Menu button
     And Enter empty email in the Register form

@@ -22,11 +22,13 @@ public class PracticeConstants {
     public static final String BILLINGFORM_COMPANY_XPATH = "xpath://*[@id=\"billing_company\"]";
     public static final String BILLINGFORM_EMAIL_XPATH = "xpath://*[@id=\"billing_email\"]";
     public static final String BILLINGFORM_PHONE_XPATH = "xpath://*[@id=\"billing_phone\"]";
-    public static final String BILLINGFORM_COUNTRY_XPATH = "xpath://*[@id=\"billing_country\"]/option[text()='Argentina']";
+    public static final String BILLINGFORM_COUNTRYFIELD_XPATH = "xpath://*[@id=\"s2id_billing_country\"]/a";
+    public static final String BILLINGFORM_COUNTRYITEM_INCOMPLETE_XPATH = "xpath://div[text()='";
     public static final String BILLINGFORM_ADDRESS_XPATH = "xpath://*[@id=\"billing_address_1\"]";
     public static final String BILLINGFORM_ADDRESSDETAIL_XPATH = "xpath://*[@id=\"billing_address_2\"]";
     public static final String BILLINGFORM_CITY_XPATH = "xpath://*[@id=\"billing_city\"]";
-    public static final String BILLINGFORM_STATE_XPATH = "xpath://*[@id=\"billing_state\"]/option[text()='Río Negro']";
+    public static final String BILLINGFORM_STATEFIELD_XPATH = "xpath://*[@id=\"s2id_billing_state\"]/a";
+    public static final String BILLINGFORM_STATEITEM_INCOMPLETE_XPATH = "xpath://div[text()='";
     public static final String BILLINGFORM_POSTCODE_XPATH = "xpath://*[@id=\"billing_postcode\"]";
     public static final Map<String,String> BILLINGFORM_DATA = getBillingFormData();
     private static Map<String,String> getBillingFormData() {

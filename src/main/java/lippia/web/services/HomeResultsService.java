@@ -54,9 +54,9 @@ public class HomeResultsService extends ActionManager {
 
     public static void verifyTotalAndSubtotalOnCheckoutPage() {
         WebElement total = getElement(PracticeConstants.TOTAL_BASKET_XPATH);
-        double totalValue = Double.parseDouble(total.getText());
+        double totalValue = Double.parseDouble(total.getText().substring(1));
         WebElement subtotal = getElement(PracticeConstants.SUBTOTAL_BASKET_XPATH);
-        double subtotalValue = Double.parseDouble(subtotal.getText());
+        double subtotalValue = Double.parseDouble(subtotal.getText().substring(1));
         Assert.assertTrue(totalValue > 0);
         Assert.assertTrue(subtotalValue > 0);
         Assert.assertTrue(totalValue > subtotalValue);
@@ -65,10 +65,12 @@ public class HomeResultsService extends ActionManager {
     public static void verifyCoupon() {
         String couponValue = PracticeConstants.COUPON_VALUE;
         click(PracticeConstants.COUPON_SHOW_XPATH);
+        ActionManager.waitVisibility(PracticeConstants.COUPON_INPUT_XPATH);
         setInput(PracticeConstants.COUPON_INPUT_XPATH, couponValue);
         click(PracticeConstants.COUPON_SUBMIT_XPATH);
+        ActionManager.waitVisibility(PracticeConstants.COUPON_MESSAGE_XPATH);
         WebElement couponMessage = getElement(PracticeConstants.COUPON_MESSAGE_XPATH);
-        Assert.assertEquals(couponMessage.getText(), "Coupon " + couponValue + " does not exist!");
+        Assert.assertEquals(couponMessage.getText(), "Coupon \"" + couponValue + "\" does not exist!");
     }
 
     public static void verifyDetailsInPaymentGatewayPage() {
@@ -84,11 +86,11 @@ public class HomeResultsService extends ActionManager {
         WebElement company = getElement(PracticeConstants.BILLINGFORM_COMPANY_XPATH);
         WebElement email = getElement(PracticeConstants.BILLINGFORM_EMAIL_XPATH);
         WebElement phone = getElement(PracticeConstants.BILLINGFORM_PHONE_XPATH);
-        WebElement country = getElement(PracticeConstants.BILLINGFORM_COUNTRY_XPATH);
+        WebElement country = getElement(PracticeConstants.BILLINGFORM_COUNTRYFIELD_XPATH);
         WebElement address = getElement(PracticeConstants.BILLINGFORM_ADDRESS_XPATH);
         WebElement addressDetail = getElement(PracticeConstants.BILLINGFORM_ADDRESSDETAIL_XPATH);
         WebElement city = getElement(PracticeConstants.BILLINGFORM_CITY_XPATH);
-        WebElement state = getElement(PracticeConstants.BILLINGFORM_STATE_XPATH);
+        WebElement state = getElement(PracticeConstants.BILLINGFORM_STATEFIELD_XPATH);
         WebElement postcode = getElement(PracticeConstants.BILLINGFORM_POSTCODE_XPATH);
         Assert.assertEquals(firstName.getText(), PracticeConstants.BILLINGFORM_DATA.get("firstName"));
         Assert.assertEquals(lastName.getText(), PracticeConstants.BILLINGFORM_DATA.get("lastName"));

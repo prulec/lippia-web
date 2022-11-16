@@ -26,7 +26,6 @@ public class HomeSteps extends PageSteps {
 
     // Test: Home 1
     @Then("The client verify that there are three Sliders on page")
-    @And("The client verify that there are three Sliders on page")
     public void verifySliders() {
         HomeResultsService.verifySliders();
     }
