@@ -65,7 +65,8 @@ public class PracticeConstants {
     public static final String COUPON_MESSAGE_XPATH = "xpath://*[contains(text(),'Coupon')]";
     public static final String PLACEORDER_BUTTON_XPATH = "xpath://*[@id=\"place_order\"]";
     public static final String ORDER_NUMBER_XPATH = "xpath://*[contains(text(),'Order Number')]/strong";
-    public static final String ORDER_BANKDETAILS_HEADER_XPATH = "xpath://*[contains(text(),'Our Bank Details')]";
+    public static final String ORDER_PAYMENTMETHOD_XPATH = "xpath://li[@class='method']/strong";
+    public static final String ORDER_BANKDETAILS_HEADER_XPATH = "xpath://h2[contains(text(),'Bank')]";
     public static final String ORDER_BILLING_TOTAL_XPATH = "xpath://table[contains(@class,'shop_table')]/tfoot/tr[4]/td/span";
 
     // Registration

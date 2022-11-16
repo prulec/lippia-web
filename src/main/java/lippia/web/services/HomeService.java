@@ -60,6 +60,7 @@ public class HomeService extends ActionManager {
     }
 
     public static void fillBillingDetailsForm() {
+        ActionManager.waitClickable(PracticeConstants.BILLINGFORM_FIRSTNAME_XPATH);
         setInput(PracticeConstants.BILLINGFORM_FIRSTNAME_XPATH, PracticeConstants.BILLINGFORM_DATA.get("firstName"));
         setInput(PracticeConstants.BILLINGFORM_LASTNAME_XPATH, PracticeConstants.BILLINGFORM_DATA.get("lastName"));
         setInput(PracticeConstants.BILLINGFORM_EMAIL_XPATH, PracticeConstants.BILLINGFORM_DATA.get("email"));
@@ -74,7 +75,8 @@ public class HomeService extends ActionManager {
     }
 
     public static void selectPaymentGateway() {
-        int i = (int) (Math.random() * 4);
+        // Last option (PayPal) isn't working currently
+        int i = (int) (Math.random() * 3);
         PracticeConstants.PAYMENTGATEWAY_INDEX[0] = i;
         click(PracticeConstants.PAYMENTGATEWAY_LOCATORS[i]);
     }

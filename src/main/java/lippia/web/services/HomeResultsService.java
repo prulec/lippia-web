@@ -124,14 +124,17 @@ public class HomeResultsService extends ActionManager {
 
     private static void validatePaymentGateways() {
         WebElement radio = getElement(PracticeConstants.PAYMENTGATEWAY_LOCATORS[PracticeConstants.PAYMENTGATEWAY_INDEX[0]]);
-        Assert.assertTrue(radio.getAttribute("selected").equals("true"));
+        Assert.assertEquals(radio.getAttribute("selected"), "true");
     }
 
     public static void verifyOrderConfirmationPage() {
+        ActionManager.waitVisibility(PracticeConstants.ORDER_BILLING_TOTAL_XPATH);
         WebElement orderNumber = getElement(PracticeConstants.ORDER_NUMBER_XPATH);
         Assert.assertTrue(Integer.parseInt(orderNumber.getText()) > 0);
-        WebElement bankHeader = getElement(PracticeConstants.ORDER_BANKDETAILS_HEADER_XPATH);
-        Assert.assertTrue(bankHeader.isDisplayed());
+        if (getElement(PracticeConstants.ORDER_PAYMENTMETHOD_XPATH).getText().equals("Direct Bank Transfer")) {
+            WebElement bankHeader = getElement(PracticeConstants.ORDER_BANKDETAILS_HEADER_XPATH);
+            Assert.assertTrue(bankHeader.isDisplayed());
+        }
         WebElement totalBilling = getElement(PracticeConstants.ORDER_BILLING_TOTAL_XPATH);
         Assert.assertTrue(totalBilling.isDisplayed());
     }
