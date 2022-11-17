@@ -69,6 +69,13 @@ public class PracticeConstants {
     public static final String ORDER_BANKDETAILS_HEADER_XPATH = "xpath://h2[contains(text(),'Bank')]";
     public static final String ORDER_BILLING_TOTAL_XPATH = "xpath://table[contains(@class,'shop_table')]/tfoot/tr[4]/td/span";
 
+    // Login
+    public static final String LOGINEMAIL_INPUT_XPATH = "xpath://*[@id=\"username\"]";
+    public static final String LOGINPASSWORD_INPUT_XPATH = "xpath://*[@id=\"password\"]";
+    public static final String LOGIN_BUTTON_XPATH = "xpath://input[@type=\"submit\" and @value=\"Login\"]";
+    public static final String LOGINERROR_XPATH = "xpath://ul[@class='woocommerce-error']/li";
+    public static final String LOGOUT_LINK_XPATH = "xpath://a[text()='Logout']";
+
     // Registration
     public static final String MYACCOUNTMENU_BUTTON_XPATH = "xpath:/html/body/div[1]/div[1]/header/div[2]/nav/ul/li[2]/a";
     public static final String REGISTERPASS_INPUT_XPATH = "xpath://*[@id=\"reg_password\"]";

@@ -25,7 +25,7 @@ Feature: Home tests
      #| 2     | Out of stock
       | 3     |
 
-  @FromHomeToConfirmation @Success @Smoke  @Now
+  @FromHomeToConfirmation @Success @Smoke
   Scenario Outline: (18) The client can select an arrival item, add to the basket, go to the checkout page, then to the payment gateway page where he fill billing details, and finally can see the Order confirmation page
     When Click on Shop Menu button
     And Click on Home menu button
