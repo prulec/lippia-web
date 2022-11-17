@@ -60,4 +60,9 @@ public class ShopService extends ActionManager {
     public static void clickAddToBasketNumber(int number) {
         click(PracticeConstants.PRODUCTITEMS_XPATH + "[" + getAddToBasketIndexes().get(number-1) + "]/a[2]");
     }
+
+    public static void selectCountryInBillingForm(String country) {
+        click(PracticeConstants.BILLINGFORM_COUNTRYFIELD_XPATH);
+        click(PracticeConstants.BILLINGFORM_COUNTRYITEM_INCOMPLETE_XPATH + country + "']");
+    }
 }

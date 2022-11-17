@@ -47,6 +47,7 @@ public class PracticeConstants {
     public static final String ADDITIONALDETAILS_XPATH = "xpath://*[@id=\"order_comments\"]";
     public static final String TOTAL_PAYMENTPAGE_XPATH = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[3]/td/strong/span";
     public static final String SUBTOTAL_PAYMENTPAGE_XPATH = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[1]/td/span";
+    public static final String TAX_PAYMENTPAGE_XPATH = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[2]/td/span";
     public static final String PAYMENTGATEWAY_DIRECT_XPATH = "xpath://*[@id=\"payment_method_bacs\"]";
     public static final String PAYMENTGATEWAY_CHECK_XPATH = "xpath://*[@id=\"payment_method_cheque\"]";
     public static final String PAYMENTGATEWAY_CASH_XPATH = "xpath://*[@id=\"payment_method_cod\"]";
@@ -75,6 +76,7 @@ public class PracticeConstants {
     public static final String LOGIN_BUTTON_XPATH = "xpath://input[@type=\"submit\" and @value=\"Login\"]";
     public static final String LOGINERROR_XPATH = "xpath://ul[@class='woocommerce-error']/li";
     public static final String LOGOUT_LINK_XPATH = "xpath://a[text()='Logout']";
+    public static final String SIGNOUT_LINK_XPATH = "xpath://a[text()='Sign out']";
 
     // Registration
     public static final String MYACCOUNTMENU_BUTTON_XPATH = "xpath:/html/body/div[1]/div[1]/header/div[2]/nav/ul/li[2]/a";
@@ -89,6 +91,16 @@ public class PracticeConstants {
     public static final String PRODUCTITEMS_XPATH = "xpath://*[@id='content']/ul/li";
     public static final String OUTOFSTOCK_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/p";
     public static final String PRICE_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/div[1]/p";
+
+    // Account
+    public static final String ACCOUNTDETAILS_LINK_XPATH = "xpath://a[contains(@href,'practice.automationtesting.in/my-account/edit-account')]";
+    public static final String ACCOUNTDETAILS_FIRSTNAME_INPUT_XPATH = "xpath://*[@id=\"account_first_name\"]";
+    public static final String ACCOUNTDETAILS_LASTNAME_INPUT_XPATH = "xpath://*[@id=\"account_last_name\"]";
+    public static final String ACCOUNTDETAILS_EMAIL_INPUT_XPATH = "xpath://*[@id=\"account_email\"]";
+    public static final String ACCOUNTDETAILS_CURRENTPASS_INPUT_XPATH = "xpath://*[@id=\"password_current\"]";
+    public static final String ACCOUNTDETAILS_NEWPASS_INPUT_XPATH = "xpath://*[@id=\"password_1\"]";
+    public static final String ACCOUNTDETAILS_NEWPASSCONFIRM_INPUT_XPATH = "xpath://*[@id=\"password_2\"]";
+    public static final String ACCOUNTDETAILS_SAVE_BUTTON_XPATH = "xpath://input[@type=\"submit\" and @value=\"Save changes\"]";
 
     // Ads
     public static final String AD_IFRAME1_XPATH = "xpath:/html/ins/*/*[contains(@id, 'aswift_') and not(contains(@id, 'host'))]";

@@ -47,4 +47,9 @@ public class LoginSteps extends PageSteps {
     public void theClientCanTAccessToTheHomeProfilePageOfHisAccount() {
         LoginService.verifyNoAccessToProfileWithBackButton();
     }
+
+    @And("Click on Sign out button")
+    public void clickOnSignOutButton() {
+        LoginService.signoutFromMyAccount();
+    }
 }

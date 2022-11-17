@@ -4,7 +4,7 @@ Feature: Shop tests
   Background:
     Given The client is in practice page
 
-  @FromShopToConfirmation @Success @Smoke  @Now
+  @FromShopToConfirmation @Success @Smoke
   Scenario Outline: (11) The client can add to basket an item from Shop page, go to the checkout page, then to the payment gateway page where he fill billing details, and finally can see the Order confirmation page
     When Click on Shop Menu button
     And Click on the Add to basket button number '<number>'
@@ -19,7 +19,7 @@ Feature: Shop tests
       | number |
       | 2      |
 
-  @Taxes
+  @Taxes @Success @Smoke
   Scenario Outline: (12) The client can add to basket an item from Shop page, and in the payment gateway page he can choose the country, and finally see that the taxes value is 2% for India and 5% for other countries
     When Click on Shop Menu button
     And Click on the Add to basket button number '<number>'

@@ -7,6 +7,8 @@ import org.testng.Assert;
 
 import java.util.List;
 
+import static java.lang.Double.parseDouble;
+
 public class ShopResultsService extends ActionManager {
 
     public static void verifyFilteredProducts(int number) {
@@ -36,4 +38,24 @@ public class ShopResultsService extends ActionManager {
         Assert.assertEquals(prices.size(), 1);
     }
 
+    public static void verifyTaxesPercentage(int percentage) {
+        WebElement subtotal = getElement(PracticeConstants.SUBTOTAL_PAYMENTPAGE_XPATH);
+        double subtotalNumber = parseDouble(subtotal.getText().substring(1));
+        WebElement taxes = getElement(PracticeConstants.TAX_PAYMENTPAGE_XPATH);
+        double taxesNumber = parseDouble(taxes.getText().substring(1));
+        if (percentage == 5) {
+            WebElement finalTaxes = (WebElement) ActionManager.getWait().until(driver -> {
+                WebElement newTaxes = getElement(PracticeConstants.TAX_PAYMENTPAGE_XPATH);
+                double newTaxesNumber = parseDouble(newTaxes.getText().substring(1));
+                if (taxesNumber != newTaxesNumber) {
+                    return newTaxes;
+                }
+                return false;
+            });
+            double finalTaxesNumber = parseDouble(finalTaxes.getText().substring(1));
+            Assert.assertEquals((int)(finalTaxesNumber * 100 / subtotalNumber), percentage);
+        } else {
+            Assert.assertEquals((int)(taxesNumber * 100 / subtotalNumber), percentage);
+        }
+    }
 }

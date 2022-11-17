@@ -50,4 +50,15 @@ public class ShopSteps extends PageSteps {
     public void clickOnTheAddToBasketButtonNumberNumber(int number) {
         ShopService.clickAddToBasketNumber(number);
     }
+
+    @And("Choose '(.*)' in the country field in Billing form")
+    public void chooseCountryInTheCountryFieldInBillingForm(String country) {
+        ShopService.selectCountryInBillingForm(country);
+    }
+
+    @And("Verify that taxes represent (.)% of the subtotal")
+    @Then("The client can see that taxes represent (.)% of the subtotal")
+    public void verifyThatTaxesRepresentOfTheSubtotal(int percentage) {
+        ShopResultsService.verifyTaxesPercentage(percentage);
+    }
 }

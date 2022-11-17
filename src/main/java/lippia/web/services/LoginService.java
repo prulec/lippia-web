@@ -50,4 +50,8 @@ public class LoginService extends ActionManager {
         driver.navigate().back();
         Assert.assertTrue(getElement(PracticeConstants.LOGIN_BUTTON_XPATH).isDisplayed());
     }
+
+    public static void signoutFromMyAccount() {
+        click(PracticeConstants.SIGNOUT_LINK_XPATH);
+    }
 }
