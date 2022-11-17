@@ -46,4 +46,18 @@ public class ShopService extends ActionManager {
         click(PracticeConstants.PRODUCTITEMS_XPATH + "[" + index + "]/a[2]");
     }
 
+    private static List<Integer> getAddToBasketIndexes() {
+        int productsQuantity = getElements(PracticeConstants.PRODUCTITEMS_XPATH).size();
+        List<Integer> indexes = new ArrayList<>();
+        for (int i = 1; i <= productsQuantity; i++) {
+            String text = getElement(PracticeConstants.PRODUCTITEMS_XPATH + "[" + i + "]/a[2]").getText();
+            if (text.matches("ADD TO BASKET")) {
+                indexes.add(i);
+            }
+        }
+        return indexes;
+    }
+    public static void clickAddToBasketNumber(int number) {
+        click(PracticeConstants.PRODUCTITEMS_XPATH + "[" + getAddToBasketIndexes().get(number-1) + "]/a[2]");
+    }
 }

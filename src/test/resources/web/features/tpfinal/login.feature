@@ -15,7 +15,7 @@ Feature: Login tests
       | email               | password    |
       | example1@domain.com | !Example123 |
 
-  @Login @Logout @Authentication @Success @Smoke  @Now
+  @Login @Logout @Authentication @Success @Smoke
   Scenario Outline: (8) The client logs in and logs out, then the client can't access to the home profile page of his account
     When Click on the My Account Menu button
     And Enter the registered email '<email>' in the Login form

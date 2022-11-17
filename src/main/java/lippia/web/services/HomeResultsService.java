@@ -36,12 +36,10 @@ public class HomeResultsService extends ActionManager {
         return getElement(PracticeConstants.BASKETMENUITEM_ANCHOR_XPATH);
     }
 
-    private static WebElement getBasketMenuItemSpan() {
-        return getElement(PracticeConstants.BASKETMENUITEM_SPAN_XPATH);
-    }
-
     public static void verifyAddToBasketMenuItem() {
-        Assert.assertTrue(getBasketMenuItemSpan().getText().matches("1 Item"));
+        ActionManager.waitVisibility(PracticeConstants.BASKETMENUITEM_SPAN_XPATH);
+        WebElement menuItem = getElement(PracticeConstants.BASKETMENUITEM_SPAN_XPATH);
+        Assert.assertTrue(menuItem.getText().matches("1 Item"));
     }
 
     public static void verifyBasketMenuLink() {

@@ -12,8 +12,8 @@ public class PracticeConstants {
     public static final String ARRIVAL_CONTAINER_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div/div/div[2]";
     public static final String ARRIBAL_DIV_XPATH = "xpath://*[contains(@class, 'sub_column_1-0-2')]";
     public static final String ADDTOBASKET_BUTTON_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/form/button";
-    public static final String BASKETMENUITEM_SPAN_XPATH = "xpath:/html/body/div[1]/div[1]/header/div[2]/nav/ul/li[6]/a/span[1]";
-    public static final String BASKETMENUITEM_ANCHOR_XPATH = "xpath:/html/body/div[1]/div[1]/header/div[2]/nav/ul/li[6]/a";
+    public static final String BASKETMENUITEM_SPAN_XPATH = "xpath://*[@id=\"wpmenucartli\"]/a/span[text()='1 item']";
+    public static final String BASKETMENUITEM_ANCHOR_XPATH = "xpath://*[@id=\"wpmenucartli\"]/a";
     public static final String TOTAL_BASKET_XPATH = "xpath://td[@data-title='Total']/strong/span";
     public static final String SUBTOTAL_BASKET_XPATH = "xpath://td[@data-title='Subtotal']/span";
     public static final String PROCEEDTOCHECKOUT_BUTTON_XPATH = "xpath://a[contains(text(), 'Proceed to Checkout')]";

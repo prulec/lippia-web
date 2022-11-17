@@ -46,4 +46,8 @@ public class ShopSteps extends PageSteps {
         ShopResultsService.verifyOldPriceDisplayed();
     }
 
+    @And("Click on the Add to basket button number '(.*)'")
+    public void clickOnTheAddToBasketButtonNumberNumber(int number) {
+        ShopService.clickAddToBasketNumber(number);
+    }
 }

@@ -51,4 +51,13 @@ public class RegistrationSteps extends PageSteps {
         RegistrationResultsService.verifyErrorMessage(message);
     }
 
+    @Then("The registration fails showing a missing password warning message")
+    public void theRegistrationFailsAndTheClientReceivesAWarningMessage() {
+        RegistrationResultsService.verifyErrorMessage("Please enter an account password");
+    }
+
+    @Then("The registration fails showing a missing credentials warning message")
+    public void theRegistrationFailsShowingAMissingCredentialsWarningMessage() {
+        RegistrationResultsService.verifyErrorMessage("Please provide a valid email address");
+    }
 }

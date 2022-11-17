@@ -53,6 +53,7 @@ public class HomeService extends ActionManager {
 
     public static void clickMenuItemLinkToCheckoutPage() {
         click(PracticeConstants.BASKETMENUITEM_ANCHOR_XPATH);
+        closeAds();
     }
 
     public static void clickProceedToCheckout() {
