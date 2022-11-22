@@ -6,31 +6,31 @@ import java.util.Map;
 public class PracticeConstants {
 
     // Home
-    public static final String SHOP_BUTTON_XPATH = "xpath://*[@id=\"menu-item-40\"]/a";
-    public static final String HOME_MENU_BUTTON_XPATH = "xpath://*[@id=\"site-logo\"]/a";
-    public static final String SLIDERS_CONTAINER_XPATH = "xpath://*[@id=\"n2-ss-6\"]/div[1]/div/div/div";
-    public static final String ARRIVAL_CONTAINER_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div/div/div[2]";
-    public static final String ARRIBAL_DIV_XPATH = "xpath://*[contains(@class, 'sub_column_1-0-2')]";
-    public static final String ADDTOBASKET_BUTTON_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/form/button";
-    public static final String BASKETMENUITEM_SPAN_XPATH = "xpath://*[@id=\"wpmenucartli\"]/a/span[text()='1 item']";
-    public static final String BASKETMENUITEM_ANCHOR_XPATH = "xpath://*[@id=\"wpmenucartli\"]/a";
-    public static final String TOTAL_BASKET_XPATH = "xpath://td[@data-title='Total']/strong/span";
-    public static final String SUBTOTAL_BASKET_XPATH = "xpath://td[@data-title='Subtotal']/span";
-    public static final String PROCEEDTOCHECKOUT_BUTTON_XPATH = "xpath://a[contains(text(), 'Proceed to Checkout')]";
-    public static final String BILLINGFORM_FIRSTNAME_XPATH = "xpath://*[@id=\"billing_first_name\"]";
-    public static final String BILLINGFORM_LASTNAME_XPATH = "xpath://*[@id=\"billing_last_name\"]";
-    public static final String BILLINGFORM_COMPANY_XPATH = "xpath://*[@id=\"billing_company\"]";
-    public static final String BILLINGFORM_EMAIL_XPATH = "xpath://*[@id=\"billing_email\"]";
-    public static final String BILLINGFORM_PHONE_XPATH = "xpath://*[@id=\"billing_phone\"]";
-    public static final String BILLINGFORM_COUNTRYFIELD_XPATH = "xpath://*[@id=\"s2id_billing_country\"]/a";
-    public static final String BILLINGFORM_COUNTRYITEM_INCOMPLETE_XPATH = "xpath://div[text()='";
-    public static final String BILLINGFORM_ADDRESS_XPATH = "xpath://*[@id=\"billing_address_1\"]";
-    public static final String BILLINGFORM_ADDRESSDETAIL_XPATH = "xpath://*[@id=\"billing_address_2\"]";
-    public static final String BILLINGFORM_CITY_XPATH = "xpath://*[@id=\"billing_city\"]";
-    public static final String BILLINGFORM_STATEFIELD_XPATH = "xpath://*[@id=\"s2id_billing_state\"]/a";
-    public static final String BILLINGFORM_STATEITEM_INCOMPLETE_XPATH = "xpath://div[text()='";
-    public static final String BILLINGFORM_POSTCODE_XPATH = "xpath://*[@id=\"billing_postcode\"]";
-    public static final Map<String,String> BILLINGFORM_DATA = getBillingFormData();
+    public static final String XPATH_HOME_SHOP_BUTTON = "xpath://*[@id=\"menu-item-40\"]/a";
+    public static final String XPATH_HOME_MENU_BUTTON = "xpath://*[@id=\"site-logo\"]/a";
+    public static final String XPATH_HOME_SLIDERS_CONTAINER = "xpath://*[@id=\"n2-ss-6\"]/div[1]/div/div/div";
+    public static final String XPATH_HOME_ARRIVAL_CONTAINER = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div/div/div[2]";
+    public static final String XPATH_HOME_ARRIBAL_DIV = "xpath://*[contains(@class, 'sub_column_1-0-2')]";
+    public static final String XPATH_HOME_ADDTOBASKET_BUTTON = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/form/button";
+    public static final String XPATH_HOME_BASKETMENUITEM_SPAN = "xpath://*[@id=\"wpmenucartli\"]/a/span[text()='1 item']";
+    public static final String XPATH_HOME_BASKETMENUITEM_ANCHOR = "xpath://*[@id=\"wpmenucartli\"]/a";
+    public static final String XPATH_CHECKOUT_TOTAL = "xpath://td[@data-title='Total']/strong/span";
+    public static final String XPATH_CHECKOUT_SUBTOTAL = "xpath://td[@data-title='Subtotal']/span";
+    public static final String XPATH_CHECKOUT_PROCEEDTOCHECKOUT_BUTTON = "xpath://a[contains(text(), 'Proceed to Checkout')]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_FIRSTNAME = "xpath://*[@id=\"billing_first_name\"]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_LASTNAME = "xpath://*[@id=\"billing_last_name\"]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_COMPANY = "xpath://*[@id=\"billing_company\"]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_EMAIL = "xpath://*[@id=\"billing_email\"]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_PHONE = "xpath://*[@id=\"billing_phone\"]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_COUNTRY = "xpath://*[@id=\"s2id_billing_country\"]/a";
+    public static final String XPATH_PAYMENT_BILLINGFORM_COUNTRYITEM_START = "xpath://div[text()='";
+    public static final String XPATH_PAYMENT_BILLINGFORM_ADDRESS = "xpath://*[@id=\"billing_address_1\"]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_ADDRESSDETAIL = "xpath://*[@id=\"billing_address_2\"]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_CITY = "xpath://*[@id=\"billing_city\"]";
+    public static final String XPATH_PAYMENT_BILLINGFORM_STATE = "xpath://*[@id=\"s2id_billing_state\"]/a";
+    public static final String XPATH_PAYMENT_BILLINGFORM_STATEITEM_INCOMPLETE = "xpath://div[text()='";
+    public static final String XPATH_PAYMENT_BILLINGFORM_POSTCODE = "xpath://*[@id=\"billing_postcode\"]";
+    public static final Map<String,String> DATA_PAYMENT_BILLINGFORM = getBillingFormData();
     private static Map<String,String> getBillingFormData() {
         Map<String,String> data = new HashMap<>();
         data.put("firstName", "Roberto");
@@ -44,66 +44,66 @@ public class PracticeConstants {
         data.put("postcode", "10020");
         return data;
     }
-    public static final String ADDITIONALDETAILS_XPATH = "xpath://*[@id=\"order_comments\"]";
-    public static final String TOTAL_PAYMENTPAGE_XPATH = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[3]/td/strong/span";
-    public static final String SUBTOTAL_PAYMENTPAGE_XPATH = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[1]/td/span";
-    public static final String TAX_PAYMENTPAGE_XPATH = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[2]/td/span";
-    public static final String PAYMENTGATEWAY_DIRECT_XPATH = "xpath://*[@id=\"payment_method_bacs\"]";
-    public static final String PAYMENTGATEWAY_CHECK_XPATH = "xpath://*[@id=\"payment_method_cheque\"]";
-    public static final String PAYMENTGATEWAY_CASH_XPATH = "xpath://*[@id=\"payment_method_cod\"]";
-    public static final String PAYMENTGATEWAY_PAYPAL_XPATH = "xpath://*[@id=\"payment_method_ppec_paypal\"]";
-    public static final String[] PAYMENTGATEWAY_LOCATORS = {
-            PAYMENTGATEWAY_DIRECT_XPATH,
-            PAYMENTGATEWAY_CHECK_XPATH,
-            PAYMENTGATEWAY_CASH_XPATH,
-            PAYMENTGATEWAY_PAYPAL_XPATH
+    public static final String XPATH_PAYMENT_ADDITIONALDETAILS = "xpath://*[@id=\"order_comments\"]";
+    public static final String XPATH_PAYMENT_TOTAL = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[3]/td/strong/span";
+    public static final String XPATH_PAYMENT_SUBTOTAL = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[1]/td/span";
+    public static final String XPATH_PAYMENT_TAX = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[2]/td/span";
+    public static final String XPATH_PAYMENT_DIRECTGATEWAY = "xpath://*[@id=\"payment_method_bacs\"]";
+    public static final String XPATH_PAYMENT_CHECKGATEWAY = "xpath://*[@id=\"payment_method_cheque\"]";
+    public static final String XPATH_PAYMENT_CASHGATEWAY = "xpath://*[@id=\"payment_method_cod\"]";
+    public static final String XPATH_PAYMENT_PAYPALGATEWAY = "xpath://*[@id=\"payment_method_ppec_paypal\"]";
+    public static final String[] LOCATORS_PAYMENTGATEWAY = {
+            XPATH_PAYMENT_DIRECTGATEWAY,
+            XPATH_PAYMENT_CHECKGATEWAY,
+            XPATH_PAYMENT_CASHGATEWAY,
+            XPATH_PAYMENT_PAYPALGATEWAY
     };
-    public static final int[] PAYMENTGATEWAY_INDEX = {0};
-    public static final String COUPON_SHOW_XPATH = "xpath://a[@class='showcoupon']";
-    public static final String COUPON_INPUT_XPATH = "xpath://*[@id=\"coupon_code\"]";
-    public static final String COUPON_SUBMIT_XPATH = "xpath://input[@name='apply_coupon']";
-    public static final String COUPON_VALUE = "4567";
-    public static final String COUPON_MESSAGE_XPATH = "xpath://*[contains(text(),'Coupon')]";
-    public static final String PLACEORDER_BUTTON_XPATH = "xpath://*[@id=\"place_order\"]";
-    public static final String ORDER_NUMBER_XPATH = "xpath://*[contains(text(),'Order Number')]/strong";
-    public static final String ORDER_PAYMENTMETHOD_XPATH = "xpath://li[@class='method']/strong";
-    public static final String ORDER_BANKDETAILS_HEADER_XPATH = "xpath://h2[contains(text(),'Bank')]";
-    public static final String ORDER_BILLING_TOTAL_XPATH = "xpath://table[contains(@class,'shop_table')]/tfoot/tr[4]/td/span";
+    public static final int[] INDEX_PAYMENTGATEWAY = {0};
+    public static final String XPATH_PAYMENT_COUPON_SHOW = "xpath://a[@class='showcoupon']";
+    public static final String XPATH_PAYMENT_COUPON_INPUT = "xpath://*[@id=\"coupon_code\"]";
+    public static final String XPATH_PAYMENT_COUPON_SUBMIT = "xpath://input[@name='apply_coupon']";
+    public static final String VALUE_PAYMENT_COUPON = "4567";
+    public static final String XPATH_PAYMENT_COUPON_MESSAGE = "xpath://*[contains(text(),'Coupon')]";
+    public static final String XPATH_PAYMENT_PLACEORDER_BUTTON = "xpath://*[@id=\"place_order\"]";
+    public static final String XPATH_CONFIRMATION_ORDERNUMBER = "xpath://*[contains(text(),'Order Number')]/strong";
+    public static final String XPATH_CONFIRMATION_PAYMENTMETHOD = "xpath://li[@class='method']/strong";
+    public static final String XPATH_CONFIRMATION_BANKDETAILS_HEADER = "xpath://h2[contains(text(),'Bank')]";
+    public static final String XPATH_CONFIRMATION_BILLING_TOTAL = "xpath://table[contains(@class,'shop_table')]/tfoot/tr[4]/td/span";
 
     // Login
-    public static final String LOGINEMAIL_INPUT_XPATH = "xpath://*[@id=\"username\"]";
-    public static final String LOGINPASSWORD_INPUT_XPATH = "xpath://*[@id=\"password\"]";
-    public static final String LOGIN_BUTTON_XPATH = "xpath://input[@type=\"submit\" and @value=\"Login\"]";
-    public static final String LOGINERROR_XPATH = "xpath://ul[@class='woocommerce-error']/li";
-    public static final String LOGOUT_LINK_XPATH = "xpath://a[text()='Logout']";
-    public static final String SIGNOUT_LINK_XPATH = "xpath://a[text()='Sign out']";
+    public static final String XPATH_LOGIN_EMAIL_INPUT = "xpath://*[@id=\"username\"]";
+    public static final String XPATH_LOGIN_PASSWORD_INPUT = "xpath://*[@id=\"password\"]";
+    public static final String XPATH_LOGIN_BUTTON = "xpath://input[@type=\"submit\" and @value=\"Login\"]";
+    public static final String XPATH_LOGIN_ERROR = "xpath://ul[@class='woocommerce-error']/li";
+    public static final String XPATH_LOGOUT = "xpath://a[text()='Logout']";
+    public static final String XPATH_SIGNOUT = "xpath://a[text()='Sign out']";
 
     // Registration
-    public static final String MYACCOUNTMENU_BUTTON_XPATH = "xpath:/html/body/div[1]/div[1]/header/div[2]/nav/ul/li[2]/a";
-    public static final String REGISTERPASS_INPUT_XPATH = "xpath://*[@id=\"reg_password\"]";
-    public static final String REGISTEREMAIL_INPUT_XPATH = "xpath://*[@id=\"reg_email\"]";
-    public static final String REGISTER_BUTTON_XPATH = "xpath://*[@id='customer_login']/div[2]/form/p[3]/input[@type='submit']";
-    public static final String SIGNOUT_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div[1]/div/p[1]/a";
-    public static final String ERROR_MESSAGE_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div[1]/ul/li";
+    public static final String XPATH_HOME_MYACCOUNT_BUTTON = "xpath:/html/body/div[1]/div[1]/header/div[2]/nav/ul/li[2]/a";
+    public static final String XPATH_REGISTER_PASS_INPUT = "xpath://*[@id=\"reg_password\"]";
+    public static final String XPATH_REGISTER_EMAIL_INPUT = "xpath://*[@id=\"reg_email\"]";
+    public static final String XPATH_REGISTER_BUTTON = "xpath://*[@id='customer_login']/div[2]/form/p[3]/input[@type='submit']";
+    public static final String XPATH_MYACCOUNT_SIGNOUT = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div[1]/div/p[1]/a";
+    public static final String XPATH_ERROR_MESSAGE = "xpath:/html/body/div[1]/div[2]/div/div/div/div/div[1]/ul/li";
 
     // Shop
-    public static final String CATEGORY_FILTERS_XPATH = "xpath://*[@id=\"woocommerce_product_categories-2\"]/ul/li";
-    public static final String PRODUCTITEMS_XPATH = "xpath://*[@id='content']/ul/li";
-    public static final String OUTOFSTOCK_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/p";
-    public static final String PRICE_XPATH = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/div[1]/p";
+    public static final String XPATH_SHOP_CATEGORY_FILTERS = "xpath://*[@id=\"woocommerce_product_categories-2\"]/ul/li";
+    public static final String XPATH_SHOP_PRODUCTITEMS_XPATH = "xpath://*[@id='content']/ul/li";
+    public static final String XPATH_SHOP_OUTOFSTOCK= "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/p";
+    public static final String XPATH_SHOP_PRICE = "xpath:/html/body/div[1]/div[2]/div/div/div/div[2]/div[1]/p";
 
     // Account
-    public static final String ACCOUNTDETAILS_LINK_XPATH = "xpath://a[contains(@href,'practice.automationtesting.in/my-account/edit-account')]";
-    public static final String ACCOUNTDETAILS_FIRSTNAME_INPUT_XPATH = "xpath://*[@id=\"account_first_name\"]";
-    public static final String ACCOUNTDETAILS_LASTNAME_INPUT_XPATH = "xpath://*[@id=\"account_last_name\"]";
-    public static final String ACCOUNTDETAILS_EMAIL_INPUT_XPATH = "xpath://*[@id=\"account_email\"]";
-    public static final String ACCOUNTDETAILS_CURRENTPASS_INPUT_XPATH = "xpath://*[@id=\"password_current\"]";
-    public static final String ACCOUNTDETAILS_NEWPASS_INPUT_XPATH = "xpath://*[@id=\"password_1\"]";
-    public static final String ACCOUNTDETAILS_NEWPASSCONFIRM_INPUT_XPATH = "xpath://*[@id=\"password_2\"]";
-    public static final String ACCOUNTDETAILS_SAVE_BUTTON_XPATH = "xpath://input[@type=\"submit\" and @value=\"Save changes\"]";
+    public static final String XPATH_ACCOUNTDETAILS_LINK = "xpath://a[contains(@href,'practice.automationtesting.in/my-account/edit-account')]";
+    public static final String XPATH_ACCOUNTDETAILS_FIRSTNAME_INPUT = "xpath://*[@id=\"account_first_name\"]";
+    public static final String XPATH_ACCOUNTDETAILS_LASTNAME_INPUT = "xpath://*[@id=\"account_last_name\"]";
+    public static final String XPATH_ACCOUNTDETAILS_EMAIL_INPUT = "xpath://*[@id=\"account_email\"]";
+    public static final String XPATH_ACCOUNTDETAILS_CURRENTPASS_INPUT = "xpath://*[@id=\"password_current\"]";
+    public static final String XPATH_ACCOUNTDETAILS_NEWPASS_INPUT = "xpath://*[@id=\"password_1\"]";
+    public static final String XPATH_ACCOUNTDETAILS_NEWPASSCONFIRM_INPUT = "xpath://*[@id=\"password_2\"]";
+    public static final String XPATH_ACCOUNTDETAILS_SAVE_BUTTON = "xpath://input[@type=\"submit\" and @value=\"Save changes\"]";
 
     // Ads
-    public static final String AD_IFRAME1_XPATH = "xpath:/html/ins/*/*[contains(@id, 'aswift_') and not(contains(@id, 'host'))]";
-    public static final String AD_IFRAME2_XPATH = "xpath://*[@id='ad_iframe']";
-    public static final String AD_CLOSE_BUTTON_XPATH = "xpath://*[@id='dismiss-button']";
+    public static final String XPATH_AD_IFRAME1 = "xpath:/html/ins/*/*[contains(@id, 'aswift_') and not(contains(@id, 'host'))]";
+    public static final String XPATH_AD_IFRAME2 = "xpath://*[@id='ad_iframe']";
+    public static final String XPATH_AD_CLOSE_BUTTON = "xpath://*[@id='dismiss-button']";
 }

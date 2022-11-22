@@ -11,7 +11,7 @@ import java.util.List;
 public class RegistrationResultsService extends ActionManager {
 
     private static boolean isSignOutDisplayed() {
-        List<WebElement> signOutList = getElements(PracticeConstants.SIGNOUT_XPATH);
+        List<WebElement> signOutList = getElements(PracticeConstants.XPATH_MYACCOUNT_SIGNOUT);
         if (signOutList.size() > 0) {
             return signOutList.get(0).isDisplayed();
         }
@@ -33,7 +33,7 @@ public class RegistrationResultsService extends ActionManager {
     }
 
     private static String getErrorMessage() {
-        return getElement(PracticeConstants.ERROR_MESSAGE_XPATH).getText();
+        return getElement(PracticeConstants.XPATH_ERROR_MESSAGE).getText();
     }
     public static void verifyErrorMessage(String message) {
         String error = getErrorMessage();

@@ -8,8 +8,8 @@ import org.testng.Assert;
 public class LoginResultsService extends ActionManager {
 
     public static void validateLoginError() {
-        ActionManager.waitVisibility(PracticeConstants.LOGINERROR_XPATH);
-        WebElement error = getElement(PracticeConstants.LOGINERROR_XPATH);
+        ActionManager.waitVisibility(PracticeConstants.XPATH_LOGIN_ERROR);
+        WebElement error = getElement(PracticeConstants.XPATH_LOGIN_ERROR);
         Assert.assertTrue(error.getText().contains("the password you entered for the username") && error.getText().contains("is incorrect"));
     }
 }

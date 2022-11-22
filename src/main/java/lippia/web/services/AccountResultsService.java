@@ -6,12 +6,12 @@ import org.testng.Assert;
 
 public class AccountResultsService extends ActionManager {
     public static void verifyAccountDetailsForm() {
-        Assert.assertTrue(getElement(PracticeConstants.ACCOUNTDETAILS_FIRSTNAME_INPUT_XPATH).isDisplayed());
-        Assert.assertTrue(getElement(PracticeConstants.ACCOUNTDETAILS_LASTNAME_INPUT_XPATH).isDisplayed());
-        Assert.assertTrue(getElement(PracticeConstants.ACCOUNTDETAILS_EMAIL_INPUT_XPATH).isDisplayed());
-        Assert.assertTrue(getElement(PracticeConstants.ACCOUNTDETAILS_CURRENTPASS_INPUT_XPATH).isDisplayed());
-        Assert.assertTrue(getElement(PracticeConstants.ACCOUNTDETAILS_NEWPASS_INPUT_XPATH).isDisplayed());
-        Assert.assertTrue(getElement(PracticeConstants.ACCOUNTDETAILS_NEWPASSCONFIRM_INPUT_XPATH).isDisplayed());
-        Assert.assertTrue(getElement(PracticeConstants.ACCOUNTDETAILS_SAVE_BUTTON_XPATH).isEnabled());
+        Assert.assertTrue(getElement(PracticeConstants.XPATH_ACCOUNTDETAILS_FIRSTNAME_INPUT).isDisplayed());
+        Assert.assertTrue(getElement(PracticeConstants.XPATH_ACCOUNTDETAILS_LASTNAME_INPUT).isDisplayed());
+        Assert.assertTrue(getElement(PracticeConstants.XPATH_ACCOUNTDETAILS_EMAIL_INPUT).isDisplayed());
+        Assert.assertTrue(getElement(PracticeConstants.XPATH_ACCOUNTDETAILS_CURRENTPASS_INPUT).isDisplayed());
+        Assert.assertTrue(getElement(PracticeConstants.XPATH_ACCOUNTDETAILS_NEWPASS_INPUT).isDisplayed());
+        Assert.assertTrue(getElement(PracticeConstants.XPATH_ACCOUNTDETAILS_NEWPASSCONFIRM_INPUT).isDisplayed());
+        Assert.assertTrue(getElement(PracticeConstants.XPATH_ACCOUNTDETAILS_SAVE_BUTTON).isEnabled());
     }
 }

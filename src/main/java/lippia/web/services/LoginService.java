@@ -9,7 +9,7 @@ import org.testng.Assert;
 public class LoginService extends ActionManager {
     public static void enterTheRegisteredEmailWithCaseChangedInTheLoginForm(String email) {
         String emailChanged = changeCase(email);
-        setInput(PracticeConstants.LOGINEMAIL_INPUT_XPATH, emailChanged);
+        setInput(PracticeConstants.XPATH_LOGIN_EMAIL_INPUT, emailChanged);
     }
     private static String changeCase(String word) {
         String[] wordSplitted = word.split("");
@@ -26,32 +26,32 @@ public class LoginService extends ActionManager {
 
     public static void enterPasswordWithCaseChangedInTheLoginForm(String password) {
         String passwordChanged = changeCase(password);
-        setInput(PracticeConstants.LOGINPASSWORD_INPUT_XPATH, passwordChanged);
+        setInput(PracticeConstants.XPATH_LOGIN_PASSWORD_INPUT, passwordChanged);
     }
 
     public static void clickLoginButton() {
-        click(PracticeConstants.LOGIN_BUTTON_XPATH);
+        click(PracticeConstants.XPATH_LOGIN_BUTTON);
     }
 
     public static void enterEmail(String email) {
-        setInput(PracticeConstants.LOGINEMAIL_INPUT_XPATH, email);
+        setInput(PracticeConstants.XPATH_LOGIN_EMAIL_INPUT, email);
     }
 
     public static void enterPassword(String password) {
-        setInput(PracticeConstants.LOGINPASSWORD_INPUT_XPATH, password);
+        setInput(PracticeConstants.XPATH_LOGIN_PASSWORD_INPUT, password);
     }
 
     public static void logoutFromMyAccount() {
-        click(PracticeConstants.LOGOUT_LINK_XPATH);
+        click(PracticeConstants.XPATH_LOGOUT);
     }
 
     public static void verifyNoAccessToProfileWithBackButton() {
         WebDriver driver = DriverManager.getDriverInstance();
         driver.navigate().back();
-        Assert.assertTrue(getElement(PracticeConstants.LOGIN_BUTTON_XPATH).isDisplayed());
+        Assert.assertTrue(getElement(PracticeConstants.XPATH_LOGIN_BUTTON).isDisplayed());
     }
 
     public static void signoutFromMyAccount() {
-        click(PracticeConstants.SIGNOUT_LINK_XPATH);
+        click(PracticeConstants.XPATH_SIGNOUT);
     }
 }

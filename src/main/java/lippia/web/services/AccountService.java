@@ -5,6 +5,6 @@ import lippia.web.constants.PracticeConstants;
 
 public class AccountService extends ActionManager {
     public static void goToAccountDetails() {
-        click(PracticeConstants.ACCOUNTDETAILS_LINK_XPATH);
+        click(PracticeConstants.XPATH_ACCOUNTDETAILS_LINK);
     }
 }
